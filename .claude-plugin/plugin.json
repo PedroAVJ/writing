@@ -1,7 +1,7 @@
 {
   "name": "writing",
-  "version": "0.4.1",
-  "description": "Write compact briefs and draft directly in the user's style from relevant user-authored examples, including WhatsApp and iMessage.",
+  "version": "0.5.0",
+  "description": "Draft directly in the user's style from relevant user-authored examples, including WhatsApp and iMessage.",
   "author": {
     "name": "PedroAVJ",
     "url": "https://github.com/PedroAVJ"
@@ -16,8 +16,7 @@
     "messages",
     "email",
     "sms",
-    "forms",
-    "briefs"
+    "forms"
   ],
   "skills": "./skills/"
 }

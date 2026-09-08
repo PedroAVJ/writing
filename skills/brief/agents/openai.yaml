@@ -1,6 +1,0 @@
-interface:
-  display_name: "Brief"
-  short_description: "Compact briefs with two reading levels"
-  default_prompt: "Use $brief to turn this material into a compact brief with atomic ordered claims and separate explanatory paragraphs."
-policy:
-  allow_implicit_invocation: true

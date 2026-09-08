@@ -40,7 +40,7 @@ When evidence is sparse, use the user's current wording and the shortest factual
 
 ## Compose with the requested format
 
-Use the requested structure without replacing the user's voice with a house voice. Apply `writing:brief` for a brief: its title, purpose, atomic leads, and subordinate glosses remain intact while the phrasing and cadence follow the user's evidence. Preserve destination limits such as a subject line or character count.
+Use the requested structure without replacing the user's voice with a house voice. `toolchain:brief` owns briefs and their independent style. Do not apply Impersonating automatically to requirements briefs or sample private messages merely to style them. Compose the two only when the user explicitly requests voice imitation for that brief; preserve Brief's structure while following the requested voice. Preserve destination limits such as a subject line or character count.
 
 Produce one finished draft unless the user asks for alternatives. Keep explanation, evidence notes, and recipient metadata outside the draft itself.
 

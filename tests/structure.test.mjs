@@ -8,7 +8,7 @@ import test from "node:test";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const expected = {
   name: "writing",
-  version: "0.4.1",
+  version: "0.5.0",
   url: "https://github.com/PedroAVJ/writing",
 };
 
@@ -44,8 +44,6 @@ test("standalone plugin metadata and tracked icon contract are synchronized", as
     "ICON-SOURCES.md",
     "THIRD-PARTY-NOTICES.md",
     "assets/writing-icon.svg",
-    "skills/brief/SKILL.md",
-    "skills/brief/agents/openai.yaml",
     "skills/impersonating/SKILL.md",
     "skills/impersonating/agents/openai.yaml",
     "skills/impersonating/scripts/check_draft.py",
@@ -59,26 +57,27 @@ test("standalone plugin metadata and tracked icon contract are synchronized", as
   );
 });
 
-test("the brief skill remains discoverable through its own invocation", async () => {
-  const metadata = await readFile(
-    join(root, "skills", "brief", "agents", "openai.yaml"),
-    "utf8",
-  );
-
-  assert.match(metadata, /allow_implicit_invocation: true/);
-  assert.match(metadata, /Use \$brief/);
-});
-
 test("exact public skill names are discoverable and point to their own skill", async () => {
   const { readdir } = await import("node:fs/promises");
-  assert.deepEqual((await readdir(join(root, "skills"))).sort(), ["brief", "impersonating"]);
-  for (const name of ["brief", "impersonating"]) {
+  assert.deepEqual((await readdir(join(root, "skills"))).sort(), ["impersonating"]);
+  for (const name of ["impersonating"]) {
     const skill = await readFile(join(root, "skills", name, "SKILL.md"), "utf8");
     const metadata = await readFile(join(root, "skills", name, "agents", "openai.yaml"), "utf8");
     assert.ok(skill.startsWith(`---\nname: ${name}\n`));
     assert.ok(metadata.includes(`Use $${name} `));
     assert.match(metadata, /allow_implicit_invocation: true/);
   }
+});
+
+test("Brief ownership moved without automatically coupling impersonation", async () => {
+  const skill = await readFile(join(root, "skills", "impersonating", "SKILL.md"), "utf8");
+  const readme = await readFile(join(root, "README.md"), "utf8");
+  assert.match(skill, /`toolchain:brief` owns briefs and their independent style/);
+  assert.match(skill, /Do not apply Impersonating automatically to requirements briefs/);
+  assert.match(skill, /only when the user explicitly requests voice imitation/);
+  assert.doesNotMatch(skill, /`writing:brief`/);
+  assert.match(readme, /`toolchain@package-manager`/);
+  await assert.rejects(access(join(root, "skills", "brief", "SKILL.md")));
 });
 
 test("the checker rejects prohibited dash punctuation without echoing drafts", async () => {
