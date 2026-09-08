@@ -1,6 +1,6 @@
 {
   "name": "writing",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Write compact briefs and draft directly in the user's style from relevant user-authored examples, including WhatsApp and iMessage.",
   "author": {
     "name": "PedroAVJ",
@@ -25,7 +25,7 @@
     "shortDescription": "Compact briefs and writing in your voice",
     "longDescription": "Write compact briefs and draft directly in the user's style from relevant user-authored examples, including WhatsApp and iMessage. Combine Brief and Impersonating for an essay with atomic claims, visible explanations, and your own phrasing. The active assistant writes and revises directly. Destination tools retain control of drafts and publication.",
     "developerName": "PedroAVJ",
-    "category": "System",
+    "category": "Productivity",
     "capabilities": [
       "Interactive",
       "Read",

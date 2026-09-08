@@ -8,7 +8,7 @@ import test from "node:test";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const expected = {
   name: "writing",
-  version: "0.4.0",
+  version: "0.4.1",
   url: "https://github.com/PedroAVJ/writing",
 };
 
@@ -25,7 +25,7 @@ test("standalone plugin metadata and tracked icon contract are synchronized", as
   assert.equal(codex.version, expected.version);
   assert.equal(codex.homepage, expected.url);
   assert.equal(codex.repository, expected.url);
-  assert.equal(codex.interface.category, "System");
+  assert.equal(codex.interface.category, "Productivity");
   assert.equal(codex.interface.composerIcon, "./assets/writing-icon.svg");
   assert.equal(codex.interface.logo, "./assets/writing-icon.svg");
 
