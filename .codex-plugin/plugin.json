@@ -1,0 +1,45 @@
+{
+  "name": "writing",
+  "version": "0.4.0",
+  "description": "Write compact briefs and draft directly in the user's style from relevant user-authored examples, including WhatsApp and iMessage.",
+  "author": {
+    "name": "PedroAVJ",
+    "url": "https://github.com/PedroAVJ"
+  },
+  "homepage": "https://github.com/PedroAVJ/writing",
+  "repository": "https://github.com/PedroAVJ/writing",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "drafting",
+    "user-voice",
+    "messages",
+    "email",
+    "sms",
+    "forms",
+    "briefs"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Writing",
+    "shortDescription": "Compact briefs and writing in your voice",
+    "longDescription": "Write compact briefs and draft directly in the user's style from relevant user-authored examples, including WhatsApp and iMessage. Combine Brief and Impersonating for an essay with atomic claims, visible explanations, and your own phrasing. The active assistant writes and revises directly. Destination tools retain control of drafts and publication.",
+    "developerName": "PedroAVJ",
+    "category": "System",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Draft this message in my voice",
+      "Rewrite this email so it sounds like me",
+      "Fill this form response in my writing style",
+      "Turn these requirements into a brief"
+    ],
+    "brandColor": "#6D5CE7",
+    "composerIcon": "./assets/writing-icon.svg",
+    "logo": "./assets/writing-icon.svg",
+    "screenshots": []
+  }
+}
